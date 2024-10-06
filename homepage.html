@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemarketing Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #8B0000;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .login-signup {
+            margin-left: auto;
+        }
+
+        .login-signup a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #121212;
+            color: white;
+            padding: 50px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left; /* Align content to the left */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            text-align: left; /* Align the heading to the left */
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: left; /* Align paragraph to the left */
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d21e1e;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: left; /* Align the button to the left */
+        }
+
+        /* Office Image */
+        .office-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Get in Touch Section */
+        .contact {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Centers the items vertically */
+            gap: 20px;
+        }
+
+        .contact-details {
+            max-width: 40%;
+            text-align: center; /* Centers the text */
+        }
+
+        .contact-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .address {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Smaller Map Embed */
+        .map-container {
+            flex-grow: 1;
+            position: relative;
+            width: 50%; /* Shrinks the width of the map */
+            padding-top: 40%; /* Adjusts the aspect ratio */
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Contact Us Section */
+        .contact-us {
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .contact-us h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-us .contact-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        /* Left Side - Contact Details */
+        .contact-us .contact-details {
+            text-align: left;
+            width: 40%;
+        }
+
+        .contact-us .contact-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-us .contact-details a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .contact-us .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        .contact-us .contact-details .icon {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-us .contact-details .icon img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* Right Side - Contact Form */
+        .contact-us .contact-form {
+            width: 45%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-us .contact-form input,
+        .contact-us .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-us .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-us .contact-form button:hover {
+            background-color: #a82222;
+        }
+
+        /* Mission and Vision Section */
+        .mission-vision {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #f3f3f3;
+        }
+
+        .mission, .vision {
+            width: 45%;
+            text-align: center;
+        }
+
+        .mission h3, .vision h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .mission p, .vision p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8B0000;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .contact-details {
+                max-width: 100%;
+            }
+
+            .map-container {
+                width: 100%;
+                padding-top: 56.25%; /* Revert to 16:9 for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li class="login-signup"><a href="#">Login</a> | <a href="#">Sign in</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The leading telemarketing company in the Philippines</h1>
+            <p>Text here Text here Text here Text here Text here Text here Text here Text here Text here Text here Text here</p>
+            <a href="#" class="apply-btn">APPLY NOW</a>
+        </div>
+    </section>
+
+    <!-- Office Image -->
+    <section class="office-image">
+        <img src="office-image.jpg" alt="Office Image">
+    </section>
+
+    <!-- Get in Touch Section -->
+    <section class="contact">
+        <div class="contact-container">
+            
+            <!-- Smaller Google Map Embed -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.492690430838!2d120.628755!3d14.074367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd0b4a27e3e7eb%3A0xc43c13be9c89c38d!2sP%20Rinoza%20St%2C%20Nasugbu%2C%20Batangas%2C%20Philippines!5e0!3m2!1sen!2sph!4v1696591268231!5m2!1sen!2sph"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Contact Details Centered -->
+            <div class="contact-details">
+                <h2>Get in Touch</h2>
+                <p>Text here Text here Text here Text here Text here Text here Text here Text here</p>
+                <div class="address">P Rinoza St., Nasugbu, Batangas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision">
+        <div class="mission">
+            <h3>MISSION</h3>
+            <p>To cultivate a positive and supportive environment for our employees, allowing them to grow and excel in their roles.</p>
+        </div>
+        <div class="vision">
+            <h3>VISION</h3>
+            <p>To be a goal-oriented company with proven records of success and strong customer relationships.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-details">
+                <h3>Reach Us</h3>
+                <div class="icon">
+                    <img src="phone-icon.png" alt="Phone Icon">
+                    <p>+63 912 345 6789</p>
+                </div>
+                <div class="icon">
+                    <img src="email-icon.png" alt="Email Icon">
+                    <p><a href="mailto:info@telemarketing.com">info@telemarketing.com</a></p>
+                </div>
+                <div class="icon">
+                    <img src="location-icon.png" alt="Location Icon">
+                    <p>P Rinoza St., Nasugbu, Batangas</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Telemarketing Company. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
