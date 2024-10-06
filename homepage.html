@@ -26,6 +26,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
+            flex-wrap: wrap; /* Allow wrapping */
         }
 
         nav ul li {
@@ -52,7 +53,7 @@
         .hero {
             background-color: #121212;
             color: white;
-            padding: 50px;
+            padding: 50px 20px; /* Added padding for smaller screens */
             position: relative;
         }
 
@@ -102,6 +103,7 @@
             justify-content: space-between;
             align-items: center; /* Centers the items vertically */
             gap: 20px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .contact-details {
@@ -162,6 +164,7 @@
             justify-content: space-around;
             align-items: flex-start;
             margin-top: 20px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         /* Left Side - Contact Details */
@@ -236,6 +239,7 @@
             justify-content: space-around;
             padding: 40px 20px;
             background-color: #f3f3f3;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .mission, .vision {
@@ -268,13 +272,44 @@
                 gap: 40px;
             }
 
-            .contact-details {
-                max-width: 100%;
+            .contact-details, .contact-form {
+                max-width: 100%; /* Full width on smaller screens */
+                width: 100%;
             }
 
             .map-container {
                 width: 100%;
                 padding-top: 56.25%; /* Revert to 16:9 for smaller screens */
+            }
+
+            .hero h1 {
+                font-size: 2rem; /* Adjusted font size */
+            }
+
+            .hero p {
+                font-size: 1rem; /* Adjusted font size */
+            }
+
+            .contact-us h2 {
+                font-size: 1.5rem; /* Adjusted font size */
+            }
+
+            .contact-us .contact-details h3 {
+                font-size: 1.2rem; /* Adjusted font size */
+            }
+
+            .mission, .vision {
+                width: 100%; /* Full width on smaller screens */
+            }
+
+            .mission h3, .vision h3 {
+                font-size: 1.5rem; /* Adjusted font size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 20px; /* Reduced padding */
             }
         }
     </style>
@@ -309,7 +344,6 @@
     <!-- Get in Touch Section -->
     <section class="contact">
         <div class="contact-container">
-            
             <!-- Smaller Google Map Embed -->
             <div class="map-container">
                 <iframe
